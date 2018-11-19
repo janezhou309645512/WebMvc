@@ -220,8 +220,11 @@
     <Compile Include="Areas\KanBan\Controllers\ShowController.cs" />
     <Compile Include="Areas\KanBan\Dal\ShowTv.cs" />
     <Compile Include="Areas\KanBan\KanBanAreaRegistration.cs" />
+    <Compile Include="Areas\Web\Controllers\FileController.cs" />
     <Compile Include="Areas\Web\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Web\Dal\FileOperation.cs" />
     <Compile Include="Areas\Web\Dal\UserOperation.cs" />
+    <Compile Include="Areas\Web\Models\FtpClient.cs" />
     <Compile Include="Areas\Web\WebAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1496,6 +1499,7 @@
     <Content Include="Areas\KanBan\Views\Show\ModuleSchedule.cshtml" />
     <Content Include="Areas\Web\Views\Home\Login.cshtml" />
     <Content Include="Areas\KanBan\Views\Print\Fr.cshtml" />
+    <Content Include="Areas\Web\Views\File\Upload.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1550,7 +1554,6 @@
     <Folder Include="Areas\App\Views\Shared\" />
     <Folder Include="Areas\KanBan\Models\" />
     <Folder Include="Areas\KanBan\Views\Shared\" />
-    <Folder Include="Areas\Web\Models\" />
     <Folder Include="Areas\Web\Views\Shared\" />
     <Folder Include="Content\js\" />
   </ItemGroup>
