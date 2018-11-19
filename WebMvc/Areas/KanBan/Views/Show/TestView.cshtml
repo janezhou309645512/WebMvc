@@ -1,0 +1,227 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE>  
+<html>
+<head>
+
+  <title>table内容连续滚动</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        
+   <style>
+.tablebox {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 10px auto;
+    background-color: rgba(6,26,103,1);
+}
+
+.tbl-header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.tbl-body {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.tablebox table {
+    width: 100%;
+}
+
+.tablebox table th,
+.tablebox table td {
+    font-size: 24px;
+    color: #7ca6f4;
+    line-height: 45px;
+    text-align: center;
+}
+
+.tablebox table tr th {
+    background-color: #1f1f9c;
+    cursor: pointer;
+}
+
+.tablebox table tr td {
+    background-color: transparent;
+}
+
+.tbl-body tr:nth-child(even) td,.tbl-body1 tr:nth-child(even) td {
+    background-color: rgba(31, 31, 156, .5);
+}
+
+.tablebox table tr td span,
+.tablebox table tr td span {
+    font-size: 24px;
+}
+
+
+
+
+   </style>
+</head>
+<body >
+
+
+    <div class="tablebox">
+
+        <div class="tbl-header">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>工单</th>
+                        <th>品名</th>
+                        <th>材料编号</th>
+                        <th>材料批次</th>
+                        <th>材料规格</th>
+                        <th>是否强制</th>
+                        <th>扫描时间</th>
+                    </tr>
+                </thead>
+                <tbody style="opacity:0;"></tbody>
+            </table>
+        </div>
+
+        <div class="tbl-body">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>工单</th>
+                        <th>品名</th>
+                        <th>材料编号</th>
+                        <th>材料批次</th>
+                        <th>材料规格</th>
+                        <th>是否强制</th>
+                        <th>扫描时间</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        var MyMarhq = '';
+        var str = '';
+        var json=[];
+
+        $(function () {
+            clearInterval(MyMarhq);
+            $('.tbl-body tbody').empty();
+            $('.tbl-header tbody').empty();
+            //QueryTables();
+            $.ajax({
+                url: '../Show/LshapeShow',
+                type: 'POST',
+                data: { id: "15" },
+                success: function (data) {
+                    json = JSON.parse(data);
+                    console.log(json);
+                    for (var i = 0; i < json.length; i++) {
+                        str = '<tr>' +
+                              '<td>' + (i + 1) + '</td>' +
+                                       '<td>' + json[i].FManuOrder + '</td>' +
+                                       '<td>' + json[i].FProduct + '</td>' +
+                                       '<td>' + json[i].FMaterial + '</td>' +
+                                       '<td>' + json[i].FLotNumber + '</td>' +
+                                       '<td>' + json[i].FSpecs + '</td>' +
+                                       '<td>' + json[i].FIsForce + '</td>' +
+                                       '<td>' + json[i].FCheckTime + '</td>' +
+                                       '</tr>';
+                        $('.tbl-body tbody').append(str);
+                        $('.tbl-header tbody').append(str);
+
+
+                    }
+                    if (json.length > 10) {
+                        $('.tbl-body tbody').html($('.tbl-body tbody').html() + $('.tbl-body tbody').html());
+                        $('.tbl-body').css('top', '0');
+                        var tblTop = 0;
+                        var speedhq = 50; // 数值越大越慢
+                        var outerHeight = $('.tbl-body tbody').find("tr").outerHeight();
+                        function Marqueehq() {
+                            if (tblTop <= -outerHeight * json.length) {
+                                tblTop = 0;
+                            } else {
+                                tblTop -= 1;
+                            }
+                            $('.tbl-body').css('top', tblTop + 'px');
+                        }
+
+                        MyMarhq = setInterval(Marqueehq, speedhq);
+
+                        // 鼠标移上去取消事件
+                        $(".tbl-header tbody").hover(function () {
+                            clearInterval(MyMarhq);
+                        }, function () {
+                            clearInterval(MyMarhq);
+                            MyMarhq = setInterval(Marqueehq, speedhq);
+                        })
+
+                    }
+
+
+
+
+
+
+                }
+
+            });
+         
+            
+
+
+
+        });
+     
+      
+        //function QueryTables() {
+        //    $.ajax({
+        //        url: '../Zzj/LshapeShow',
+        //        type: 'POST',
+        //        data: { id: "15" },
+        //        success: function (data) {
+        //             json = JSON.parse(data);
+        //             console.log(json);
+        //            for (var i = 0; i < json.length; i++) {
+        //                str = '<tr>' +
+        //                      '<td>' + (i+1) + '</td>' +
+        //                               '<td>' + json[i].FManuOrder + '</td>' +
+        //                               '<td>' + json[i].FProduct + '</td>' +
+        //                               '<td>' + json[i].FMaterial + '</td>' +
+        //                               '<td>' + json[i].FLotNumber + '</td>' +
+        //                               '<td>' + json[i].FSpecs + '</td>' +
+        //                               '<td>' + json[i].FIsForce + '</td>' +
+        //                               '<td>' + json[i].FCheckTime + '</td>' +
+        //                               '</tr>';
+        //                $('.tbl-body tbody').append(str);
+        //                $('.tbl-header tbody').append(str);
+
+
+                    
+        //            }
+        //        }
+
+        //    })
+            
+        //}
+
+      
+
+    </script>
+</body>
+</html>  

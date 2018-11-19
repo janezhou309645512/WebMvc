@@ -1,0 +1,6 @@
+D:\GitFile\cmvcdemo\HK.Pub\bin\Release\HK.Pub.dll
+D:\GitFile\cmvcdemo\HK.Pub\bin\Release\HK.Pub.pdb
+D:\GitFile\cmvcdemo\HK.Pub\bin\Release\LitJson.dll
+D:\GitFile\cmvcdemo\HK.Pub\obj\Release\HK.Pub.csprojResolveAssemblyReference.cache
+D:\GitFile\cmvcdemo\HK.Pub\obj\Release\HK.Pub.dll
+D:\GitFile\cmvcdemo\HK.Pub\obj\Release\HK.Pub.pdb

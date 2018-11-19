@@ -1,0 +1,11 @@
+E:\Lstech.Mobile\Lstech.Mobile\HK.Pub\bin\Debug\HK.Pub.dll
+E:\Lstech.Mobile\Lstech.Mobile\HK.Pub\bin\Debug\HK.Pub.pdb
+E:\Lstech.Mobile\Lstech.Mobile\HK.Pub\bin\Debug\LitJson.dll
+E:\Lstech.Mobile\Lstech.Mobile\HK.Pub\obj\Debug\HK.Pub.dll
+E:\Lstech.Mobile\Lstech.Mobile\HK.Pub\obj\Debug\HK.Pub.pdb
+D:\GitFile\cmvcdemo\HK.Pub\bin\Debug\HK.Pub.dll
+D:\GitFile\cmvcdemo\HK.Pub\bin\Debug\HK.Pub.pdb
+D:\GitFile\cmvcdemo\HK.Pub\bin\Debug\LitJson.dll
+D:\GitFile\cmvcdemo\HK.Pub\obj\Debug\HK.Pub.csprojResolveAssemblyReference.cache
+D:\GitFile\cmvcdemo\HK.Pub\obj\Debug\HK.Pub.dll
+D:\GitFile\cmvcdemo\HK.Pub\obj\Debug\HK.Pub.pdb
