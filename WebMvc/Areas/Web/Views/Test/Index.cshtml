@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>vue</title>
+
+    <script src="~/Content/js/vue.min.js"></script>
+
+</head>
+<body>
+    <div> 
+        <div id="vue_det">
+            <h1>site : {{site}}</h1>
+            <h1>url : {{url}}</h1>
+            <p>{{ message }}</p>
+            <h1>{{details()}}</h1>
+            <input type="text" v-model="message" />
+        </div>
+      
+       
+
+    </div>
+    <script type="text/javascript">
+      
+    var vm = new Vue({
+        el: '#vue_det',
+        data: {
+            site: "vue",
+            url: "www.baidu.com",
+            alexa: "10000",
+            message: 'Hello World!'
+        },
+        methods: {
+            details: function() {
+                return  this.site + " - ---";
+            }
+        }
+    })
+    </script>
+</body>
+</html>

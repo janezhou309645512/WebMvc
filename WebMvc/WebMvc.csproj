@@ -222,6 +222,7 @@
     <Compile Include="Areas\KanBan\KanBanAreaRegistration.cs" />
     <Compile Include="Areas\Web\Controllers\FileController.cs" />
     <Compile Include="Areas\Web\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Web\Controllers\TestController.cs" />
     <Compile Include="Areas\Web\Dal\FileOperation.cs" />
     <Compile Include="Areas\Web\Dal\UserOperation.cs" />
     <Compile Include="Areas\Web\Models\FtpClient.cs" />
@@ -1343,6 +1344,7 @@
     <Content Include="Content\jquery-easyui-1.6.9\themes\mobile.css" />
     <Content Include="Content\jquery-easyui-1.6.9\themes\react.css" />
     <Content Include="Content\jquery-easyui-1.6.9\themes\vue.css" />
+    <Content Include="Content\js\vue.min.js" />
     <Content Include="Dll\FastReport.Bars.dll" />
     <Content Include="Dll\FastReport.dll" />
     <Content Include="Dll\FastReport.Editor.dll" />
@@ -1500,6 +1502,7 @@
     <Content Include="Areas\Web\Views\Home\Login.cshtml" />
     <Content Include="Areas\KanBan\Views\Print\Fr.cshtml" />
     <Content Include="Areas\Web\Views\File\Upload.cshtml" />
+    <Content Include="Areas\Web\Views\Test\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1555,7 +1558,6 @@
     <Folder Include="Areas\KanBan\Models\" />
     <Folder Include="Areas\KanBan\Views\Shared\" />
     <Folder Include="Areas\Web\Views\Shared\" />
-    <Folder Include="Content\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
