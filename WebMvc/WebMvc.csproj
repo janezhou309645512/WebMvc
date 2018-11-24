@@ -224,6 +224,7 @@
     <Compile Include="Areas\Web\Controllers\HomeController.cs" />
     <Compile Include="Areas\Web\Controllers\TestController.cs" />
     <Compile Include="Areas\Web\Dal\FileOperation.cs" />
+    <Compile Include="Areas\Web\Dal\Test.cs" />
     <Compile Include="Areas\Web\Dal\UserOperation.cs" />
     <Compile Include="Areas\Web\Models\FtpClient.cs" />
     <Compile Include="Areas\Web\WebAreaRegistration.cs" />
@@ -1503,6 +1504,7 @@
     <Content Include="Areas\KanBan\Views\Print\Fr.cshtml" />
     <Content Include="Areas\Web\Views\File\Upload.cshtml" />
     <Content Include="Areas\Web\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Web\Views\Test\ShowTable.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

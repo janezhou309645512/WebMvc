@@ -13,13 +13,25 @@ namespace WebMvc.Areas.Web.Controllers
         {
             return View();
         }
-       
 
+        public ActionResult ShowTable()
+        {
+            return View();
+        }
 
-
-
-
+        public string QueryList(int start,int limit)
+        {
         
+
+
+
+            return Dal.Test.MQueryList(start,limit);
+
+        }
+
+
+
+
 
 
 
